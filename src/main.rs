@@ -22,5 +22,5 @@ fn main() {
         println!("Reciprocal of {} repeats after {} digits.", primes[i as usize], reciprocal_repeating_digit_counts[i as usize]);
     });
 
-    let primes_with_reciprocal_repeating_digit_counts: HashMap<i32, i32> = HashMap::new();
+    let primes_with_reciprocal_repeating_digit_counts: HashMap<i32, i32> = utilities::combine_vectors_into_hashmap(primes, reciprocal_repeating_digit_counts);
 }
