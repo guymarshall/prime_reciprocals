@@ -19,5 +19,7 @@ fn main() {
 
     let sorted_pairs: Vec<(&i32, &i32)> = utilities::sort_hashmap_by_key(&primes_with_reciprocal_repeating_digit_counts);
 
-    utilities::print_hashmap(&sorted_pairs); // needs fixing
+    sorted_pairs.into_iter().for_each(|pair| {
+        println!("Reciprocal of {} repeats after {} digits.", pair.0, pair.1);
+    });
 }
