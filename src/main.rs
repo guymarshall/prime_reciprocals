@@ -1,5 +1,7 @@
 #![forbid(unsafe_code)]
 
+use std::collections::HashMap;
+
 mod math;
 mod user_input;
 
@@ -18,4 +20,6 @@ fn main() {
     (0..number).into_iter().for_each(|i| {
         println!("Reciprocal of {} repeats after {} digits.", primes[i as usize], reciprocal_repeating_digit_counts[i as usize]);
     });
+
+    let primes_with_reciprocal_repeating_digit_counts: HashMap<i32, i32> = HashMap::new();
 }
