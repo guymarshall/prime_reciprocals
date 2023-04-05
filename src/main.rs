@@ -4,6 +4,7 @@ use std::collections::HashMap;
 
 mod math;
 mod user_input;
+mod utilities;
 
 fn main() {
     let number: i32 = user_input::input("Enter a number:");
