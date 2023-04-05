@@ -4,12 +4,17 @@ use std::collections::HashMap;
 use rayon::prelude::*;
 
 fn is_prime(number: &i32) -> bool {
-    if number % 2 == 0 {
+    if *number <= 1 {
         return false;
     }
-    let number_dereferenced: i32 = *number;
-    let root_of_number: i32 = (number_dereferenced as f64).sqrt() as i32;
-    !(3..root_of_number).step_by(2).any(|n| root_of_number % n == 0)
+    if *number == 2 {
+        return true;
+    }
+    if *number % 2 == 0 {
+        return false;
+    }
+    let root_of_number: i32 = ( *number as f64).sqrt() as i32;
+    !(3..=root_of_number).step_by(2).any(|n| *number % n == 0)
 }
 
 pub fn primes_up_to(number: i32) -> Vec<i32> {
