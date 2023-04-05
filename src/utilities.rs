@@ -8,7 +8,7 @@ pub fn combine_vectors_into_hashmap(keys: Vec<i32>, values: Vec<i32>) -> HashMap
     hash_map
 }
 
-fn print_hashmap<K, V>(hash_map: &HashMap<K, V>)
+pub fn print_hashmap<K, V>(hash_map: &HashMap<K, V>)
     where
         K: std::fmt::Display,
         V: std::fmt::Display,
