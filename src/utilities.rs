@@ -7,3 +7,13 @@ pub fn combine_vectors_into_hashmap(keys: Vec<i32>, values: Vec<i32>) -> HashMap
     }
     hash_map
 }
+
+fn print_hashmap<K, V>(hash_map: &HashMap<K, V>)
+    where
+        K: std::fmt::Display,
+        V: std::fmt::Display,
+{
+    for (key, value) in hash_map.iter() {
+        println!("Key: {}, Value: {}", key, value);
+    }
+}
