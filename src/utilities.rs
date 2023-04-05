@@ -14,6 +14,6 @@ fn print_hashmap<K, V>(hash_map: &HashMap<K, V>)
         V: std::fmt::Display,
 {
     for (key, value) in hash_map.iter() {
-        println!("Key: {}, Value: {}", key, value);
+        println!("Reciprocal of {} repeats after {} digits.", key, value);
     }
 }
