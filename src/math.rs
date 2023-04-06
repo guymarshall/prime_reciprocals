@@ -1,7 +1,6 @@
 #![forbid(unsafe_code)]
 
 use std::collections::HashMap;
-use rayon::prelude::*;
 
 fn is_prime(number: &i32) -> bool {
     if *number <= 1 {
