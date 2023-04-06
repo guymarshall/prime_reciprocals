@@ -1,6 +1,6 @@
 #![forbid(unsafe_code)]
 
-use std::{collections::HashMap, fs};
+use std::collections::HashMap;
 
 mod math;
 mod user_input;
@@ -22,13 +22,7 @@ fn main() {
 
     let sorted_pairs: Vec<(&i32, &i32)> = utilities::sort_hashmap_by_key(&primes_with_reciprocal_repeating_digit_counts);
 
-    sorted_pairs.clone().into_iter().for_each(|pair| {
+    sorted_pairs.into_iter().for_each(|pair| {
         println!("Reciprocal of {} repeats after {} digits.", pair.0, pair.1);
     });
-
-    let file_contents: String = sorted_pairs.iter()
-    .map(|(key, value)| format!("{}: {}\n", key, value))
-    .collect();
-
-    fs::write("output.txt", file_contents).expect("Failed to write file.");
 }
