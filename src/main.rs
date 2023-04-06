@@ -10,7 +10,7 @@ fn main() {
     let number: i32 = user_input::input("Enter a number:");
 
     println!("Calculating primes...");
-    let primes: Vec<i32> = math::primes_up_to(number);
+    let primes: Vec<i32> = math::primes(number.try_into().unwrap());
 
     println!("Calculating reciprocal repeating digit counts...");
     let reciprocal_repeating_digit_counts: Vec<i32> = primes
