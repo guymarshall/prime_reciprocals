@@ -1,7 +1,5 @@
 #![forbid(unsafe_code)]
 
-use std::collections::HashMap;
-
 fn is_prime(number: &i32) -> bool {
     if *number <= 1 {
         return false;
@@ -22,14 +20,14 @@ pub fn primes(count: usize) -> Vec<i32> {
 
 pub fn reciprocal_decimal_count(input: i32) -> i32 {
     let mut dividend: i32 = 1;
-    let mut remainders: HashMap<i32, i32> = HashMap::new();
+    let mut remainders: Vec<i32> = vec![-1; input as usize];
     let mut decimal_count: i32 = 0;
 
-    while !remainders.contains_key(&dividend) {
-        remainders.insert(dividend, decimal_count);
+    while remainders[dividend as usize] == -1 {
+        remainders[dividend as usize] = decimal_count;
         dividend = (dividend * 10) % input;
         decimal_count += 1;
     }
 
-    decimal_count - remainders.get(&dividend).unwrap()
+    decimal_count - remainders[dividend as usize]
 }
