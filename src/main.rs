@@ -1,6 +1,6 @@
 #![forbid(unsafe_code)]
 
-use std::collections::HashMap;
+use std::{collections::HashMap, fs};
 
 mod math;
 mod user_input;
@@ -25,4 +25,10 @@ fn main() {
     sorted_pairs.into_iter().for_each(|pair| {
         println!("Reciprocal of {} repeats after {} digits.", pair.0, pair.1);
     });
+
+    let file_contents: String = sorted_pairs.iter()
+    .map(|(key, value)| format!("{}: {}\n", key, value))
+    .collect();
+
+    fs::write("output.txt", file_contents).expect("Failed to write file.");
 }
