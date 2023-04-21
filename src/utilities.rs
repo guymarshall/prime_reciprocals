@@ -1,3 +1,5 @@
+#![forbid(unsafe_code)]
+
 use std::collections::HashMap;
 
 pub fn combine_vectors_into_hashmap(keys: Vec<i32>, values: Vec<i32>) -> HashMap<i32, i32> {
